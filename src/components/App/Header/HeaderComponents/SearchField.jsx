@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useHistory } from "react-router-dom";
 import styled from 'styled-components';
 
 const SrchDivMain = styled.div`
@@ -75,36 +76,56 @@ const SrchInput = styled.input`
   }
 `;
 
-function MySearch() {
-  return React.createElement(
-    SrchDivMain,
-    { className: 'SrchDivMain' },
-    React.createElement(
-      SrchImgCont,
-      { className: 'SrchImgCont' },
-      React.createElement(
-        SrchImg,
-        {
-          className: 'SrchImg',
-          focusable: 'false',
-          viewBox: '0 0 24 24',
-          'aria-hidden': 'true',
-        },
-        React.createElement('path', {
-          d: 'M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z',
-        })
-      )
-    ),
-    React.createElement(
-      SrchCont,
-      { className: 'SrchCont' },
-      React.createElement(SrchInput, {
-        className: 'SrchInput',
-        placeholder: 'Search…',
-        type: 'text',
-        'aria-label': 'search',
-      })
-    )
+function MySearch(props) {
+  const inputText = useRef();
+  const [value, setValue] = useState('');
+  const history = useHistory();
+
+  useEffect(() => {
+    const listener = event => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        event.preventDefault();
+        const sendText = () => {
+          props.onchange(inputText.current.value);
+        };
+        sendText();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+      history.push("/");
+    };
+  }, [props , history]);
+
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  return (
+    <SrchDivMain className="SrchDivMain">
+      <SrchImgCont className="SrchImgCont">
+        <SrchImg
+          className="SrchImg"
+          focusable="false"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+        </SrchImg>
+      </SrchImgCont>
+      <SrchCont className="SrchCont">
+        <SrchInput
+          className="SrchInput"
+          ref={inputText}
+          placeholder="Search &amp; Discover..."
+          type="text"
+          aria-label="search"
+          value={value || ""}
+          onChange={onChange}
+        ></SrchInput>
+      </SrchCont>
+    </SrchDivMain>
   );
 }
 

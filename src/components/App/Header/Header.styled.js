@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const Header = styled.header`
+export const HeaderBar = styled.header`
   color: #fff;
-  background-color: #1c5476;
+  background-color: #b32b2b;
   position: static;
   width: 100%;
   display: flex;
@@ -15,7 +15,7 @@ const Header = styled.header`
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 `;
 
-const HeaderDiv = styled.div`
+export const HeaderDiv = styled.div`
   @media (min-width: 600px) {
     min-height: 56px;
   }
@@ -34,4 +34,6 @@ const HeaderDiv = styled.div`
   align-items: center;
 `;
 
-export { Header, HeaderDiv };
+export const BlankDiv = styled.div`
+  flex-grow: 1;
+`;
