@@ -8,7 +8,7 @@ const AllDiv = styled.div`
 `;
 
 function Layout({ children }) {
-  return <AllDiv>{children}</AllDiv>;
+  return <AllDiv>{children}</AllDiv>
 }
 
 export default Layout;
