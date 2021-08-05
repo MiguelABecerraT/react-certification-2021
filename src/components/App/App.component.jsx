@@ -34,9 +34,9 @@ function App() {
             <Route path="/login">
               <LoginPage />
             </Route>
-            <Private exact path="/v/:idVideo">
+            <Route exact path="/v/:idVideo">
               <VideoPage />
-            </Private>
+            </Route>
             <Route path="*">
               <NotFound />
             </Route>
