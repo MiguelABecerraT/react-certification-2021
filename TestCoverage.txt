@@ -1,0 +1,65 @@
+----------------------------------------------|----------|----------|----------|----------|-------------------|
+File                                          |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+----------------------------------------------|----------|----------|----------|----------|-------------------|
+All files                                     |    62.11 |    22.22 |    45.83 |     61.9 |                   |
+ src                                          |        0 |      100 |      100 |        0 |                   |
+  index.js                                    |        0 |      100 |      100 |        0 |                 7 |
+ src/components/App                           |       60 |      100 |    33.33 |       60 |                   |
+  App.component.jsx                           |       60 |      100 |    33.33 |       60 |             18,26 |
+  index.js                                    |        0 |        0 |        0 |        0 |                   |       
+ src/components/App/Header                    |    66.67 |      100 |    33.33 |    66.67 |                   |       
+  Header.jsx                                  |       50 |      100 |    33.33 |       50 |          12,13,23 |
+  Header.styled.js                            |      100 |      100 |      100 |      100 |                   |       
+ src/components/App/Header/HeaderComponents   |    86.05 |    33.33 |    66.67 |    86.05 |                   |       
+  DarKMode.js                                 |      100 |      100 |      100 |      100 |                   |       
+  MenuBtn.js                                  |      100 |      100 |      100 |      100 |                   |       
+  ProfileBtn.js                               |      100 |      100 |      100 |      100 |                   |       
+  SearchField.jsx                             |    73.91 |    33.33 |       50 |    73.91 |87,88,89,90,92,103 |       
+ src/components/Layout                        |      100 |      100 |      100 |      100 |                   |       
+  Layout.component.jsx                        |      100 |      100 |      100 |      100 |                   |       
+  index.js                                    |        0 |        0 |        0 |        0 |                   |       
+ src/components/Private                       |        0 |        0 |        0 |        0 |                   |       
+  Private.component.jsx                       |        0 |        0 |        0 |        0 |            7,9,10 |       
+  index.js                                    |        0 |        0 |        0 |        0 |                   |       
+ src/pages/Home                               |    79.17 |       25 |       80 |    78.26 |                   |       
+  Home.page.jsx                               |    70.59 |       25 |       80 |    68.75 |    16,17,18,34,42 |       
+  Home.page.styled.js                         |      100 |      100 |      100 |      100 |                   |
+  index.js                                    |        0 |        0 |        0 |        0 |                   |       
+ src/pages/Home/Content                       |      100 |      100 |      100 |      100 |                   |       
+  HomeContent.js                              |      100 |      100 |      100 |      100 |                   |       
+ src/pages/Login                              |        0 |      100 |        0 |        0 |                   |       
+  Login.page.jsx                              |        0 |      100 |        0 |        0 |   8,9,12,13,14,17 |       
+  index.js                                    |        0 |        0 |        0 |        0 |                   |       
+ src/pages/NotFound                           |        0 |      100 |        0 |        0 |                   |       
+  NotFound.page.jsx                           |        0 |      100 |        0 |        0 |                 7 |       
+  index.js                                    |        0 |        0 |        0 |        0 |                   |       
+ src/pages/Secret                             |        0 |      100 |        0 |        0 |                   |       
+  Secret.page.jsx                             |        0 |      100 |        0 |        0 |                 5 |       
+  index.js                                    |        0 |        0 |        0 |        0 |                   |       
+ src/pages/Videos                             |    17.65 |        0 |        0 |    17.65 |                   |       
+  Videos.page.jsx                             |    17.65 |        0 |        0 |    17.65 |... 42,43,44,46,51 |       
+  index.js                                    |        0 |        0 |        0 |        0 |                   |       
+ src/pages/Videos/VideoContent                |      100 |      100 |      100 |      100 |                   |       
+  VideoDetail.jsx                             |      100 |      100 |      100 |      100 |                   |       
+  index.js                                    |        0 |        0 |        0 |        0 |                   |       
+ src/pages/Videos/VideoContent/RelativeVideos |    77.78 |       50 |       80 |    77.78 |                   |       
+  RelativeVideos.jsx                          |    68.42 |       50 |       75 |    68.42 | 58,59,60,61,62,78 |       
+  RelativeVideosDetails.jsx                   |      100 |      100 |      100 |      100 |                   |       
+ src/providers/Auth                           |    52.94 |        0 |       40 |    52.94 |                   |       
+  Auth.provider.jsx                           |    52.94 |        0 |       40 |    52.94 |... 13,27,28,32,33 |       
+  index.js                                    |        0 |        0 |        0 |        0 |                   |       
+ src/utils                                    |    55.56 |      100 |    33.33 |    55.56 |                   |       
+  constants.js                                |      100 |      100 |      100 |      100 |                   |
+  fns.js                                      |        0 |      100 |        0 |        0 |                 2 |       
+  storage.js                                  |    57.14 |      100 |       50 |    57.14 |            7,8,13 |       
+ src/utils/hooks                              |        0 |      100 |        0 |        0 |                   |       
+  useFortune.js                               |        0 |      100 |        0 |        0 |... 17,19,21,25,28 |       
+----------------------------------------------|----------|----------|----------|----------|-------------------|       
+
+Test Suites: 2 failed, 9 passed, 11 total
+Tests:       3 failed, 19 passed, 22 total
+Snapshots:   0 total
+Time:        16.836s, estimated 18s
+Ran all test suites.
+
+Watch Usage: Press w to show more.
