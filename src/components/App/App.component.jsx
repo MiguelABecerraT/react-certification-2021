@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <ThemeProvider>
         <SearchProvider>
-          <Header></Header>
+          <Header/>
           <Layout>
             <Switch>
               <Route exact path="/">
