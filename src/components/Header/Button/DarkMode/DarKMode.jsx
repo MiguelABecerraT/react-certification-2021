@@ -20,7 +20,7 @@ function MyDarkMode({theme}) {
   };
 
   return (
-    <DMBtn theme={props.theme}>
+    <DMBtn theme={theme}>
       <span className="DMSliderBar">
         <span className="RoundBtnSpan">
           <span className="inputBtn">
