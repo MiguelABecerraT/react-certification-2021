@@ -14,7 +14,8 @@ function Header() {
   return (
     <HeaderBar className="Header" theme={darkMode}>
       <HeaderDiv className="HeaderDiv">
-        <MenuBtn></MenuBtn>
+        <MenuBtn/>
+
         <MySearch />
         <BlankDiv></BlankDiv>
         <DMLogin>
