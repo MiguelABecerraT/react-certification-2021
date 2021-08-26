@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { ThemeContext } from '../../../../providers/Theme/Theme.provider';
+import { ThemeContext } from 'providers/Theme/Theme.provider';
 import { DMBtn } from './DarkMode.styled';
 
 function MyDarkMode({theme}) {
