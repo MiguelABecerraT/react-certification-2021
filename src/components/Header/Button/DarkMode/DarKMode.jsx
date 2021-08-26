@@ -3,7 +3,8 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../../../providers/Theme/Theme.provider';
 import { DMBtn } from './DarkMode.styled';
 
-function MyDarkMode(props) {
+function MyDarkMode({theme}) {
+
   const mode = useContext(ThemeContext)
   const {darkMode} = mode.state
   
