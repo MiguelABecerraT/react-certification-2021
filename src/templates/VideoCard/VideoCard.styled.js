@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import theme from '../../../../providers/Theme/Theme';
+import theme from '../../providers/Theme/Theme';
 
 export const MainVideoContent = styled.div`
   padding-bottom: 20px;

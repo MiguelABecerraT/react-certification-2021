@@ -1,21 +1,23 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { getByText, render, screen } from '@testing-library/react';
 
 import Header from './Header';
+import { BrowserRouter } from 'react-router-dom';
+import ThemeContext from '../../providers/Theme/Theme.provider';
 
-describe('App', () => {
+describe('Header tests', () => {
   test('should contains a specific text', () => {
-    const result = render(<Header/>);
+    render(<BrowserRouter><ThemeContext><Header/></ThemeContext></BrowserRouter>);
     screen.debug();
-    const element = screen.queryByText(/Dark Mode/i);
-    expect(element).toBeInTheDocument();
+    const element = screen.getByText(/Light mode/i);
+    expect(element.textContent).toBeInTheDocument
   });
 
   test('should contains an specific structure', () => {
 
-    const result = render(<Header/>);
+    const result = render(<BrowserRouter><ThemeContext><Header/></ThemeContext></BrowserRouter>);
     screen.debug();
-    const element = result.container.querySelector('header div div div button span div svg path');
-    expect(element).toBeInTheDocument();
+    const element = result.container.querySelector('div label span span span input');
+    expect(element).toBeInTheDocument;
   });
 });

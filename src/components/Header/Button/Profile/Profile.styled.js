@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import theme from '../../../../providers/Theme/Theme';
 
-export const LoginBtn = styled.button`
+export const ProfileBtn = styled.button`
   color: inherit;
   margin-right: -12px;
   flex: 0 0 auto;
@@ -60,4 +60,9 @@ export const LoginBtn = styled.button`
     flex-shrink: 0;
     user-select: none;
   }
+`;
+
+export const WizeIcon = styled.img`
+width: 40px;
+height: auto;
 `;

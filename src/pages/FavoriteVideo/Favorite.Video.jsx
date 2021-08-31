@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import VideoCard from '../../templates/VideoCard';
-import RelatedVideos from '../../templates/RelatedVideos/RelatedVideos';
+import MoreFavorites from '../../templates/MoreFavorites/MoreFavorites';
 import { useYoutubeApi } from '../../utils/hooks/useYoutubeApi';
 import { useContext } from 'react';
 import { ThemeContext } from '../../providers/Theme/Theme.provider';
-import { MainContainer, VideoColumn, RelatedCol, VideoPageDiv} from './Video.styled';
-import { RELVIDS } from '../../utils/constants';
+import { MainContainer, VideoColumn, RelatedCol, VideoPageDiv} from './Favorite.Video.styled';
+import { FAVIDS } from '../../utils/constants';
 
-function VideoPage() {
+function FavoriteVideo() {
   const themeContext = useContext(ThemeContext);
   const { mode } = themeContext.state;
   const { idVideo } = useParams();
@@ -39,7 +39,7 @@ function VideoPage() {
             />
           </VideoColumn>
           <RelatedCol className="RelatedCol">
-            <RelatedVideos idVideo={idVideo} title={RELVIDS}/>
+            <MoreFavorites idVideo={idVideo} title={FAVIDS} data={true}/>
           </RelatedCol>
         </MainContainer>
       )}
@@ -48,4 +48,4 @@ function VideoPage() {
   );
 }
 
-export default VideoPage;
+export default FavoriteVideo;

@@ -2,7 +2,7 @@ import React from 'react';
 import { RelatedDiv, IndvReltDiv, RelatedBg, RelatedImg, RelatedTitle, RelatedExtInfo } from './RelatedVideos.styled';
 import { Link } from 'react-router-dom';
 
-const VideoCardRelative = ({ id, urlImage, title, channel, theme }) => (
+const RelatedVideosCard = ({ id, urlImage, title, channel, theme }) => (
   <Link to={`/v/${id}`}>
     <div id={id}>
       <RelatedDiv className="RelatedDiv">
@@ -24,4 +24,4 @@ const VideoCardRelative = ({ id, urlImage, title, channel, theme }) => (
   </Link>
 );
 
-export default VideoCardRelative;
+export default RelatedVideosCard;

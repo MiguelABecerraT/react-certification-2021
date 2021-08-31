@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import theme from '../../../../providers/Theme/Theme';
 
-export const DMBtn = styled.label`
+export const ThemeBtn = styled.label`
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -9,7 +9,7 @@ export const DMBtn = styled.label`
   margin-right: 16px;
   vertical-align: middle;
 
-  .DMSliderBar {
+  .TMSliderBar {
     width: 58px;
     height: 38px;
     display: inherit;
@@ -80,7 +80,27 @@ export const DMBtn = styled.label`
     position: absolute;
   }
 
-  .DMTitle {
+
+  input:focus + .RoundBtn {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+
+  input:checked + .RoundBtn {
+    transition: .4s;
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+input + .RoundBtn {
+    transition: .4s;
+  -webkit-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+  .TMTitle {
     font-size: 1rem;
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
     font-weight: 400;

@@ -4,7 +4,7 @@ import { Menu } from './MenuBtn.styled';
 
 function MenuBtn() {
   return (
-    <Menu className="MenuBtn" tabindex="0" type="button" ariaLabel="open drawer">
+    <Menu className="MenuBtn" tabindex="0" ariaLabel="open drawer">
       <span>
         <svg focusable="false" viewBox="0 0 24 24">
           <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
@@ -14,4 +14,4 @@ function MenuBtn() {
   );
 }
 
-export { MenuBtn };
+export default MenuBtn;

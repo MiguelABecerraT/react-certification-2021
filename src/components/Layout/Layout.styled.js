@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
-const AllDiv = styled.div`
+export const AllDiv = styled.div`
   -webkit-box-flex: 1;
   flex-grow: 1;
-  height: 100%;
+  z-index: -1;
 `;
-
-export default AllDiv ;

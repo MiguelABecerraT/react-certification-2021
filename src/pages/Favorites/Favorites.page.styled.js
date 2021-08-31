@@ -72,7 +72,7 @@ export const PrevBtn = styled.button`
 
 export const NextBtn = styled.button`
   height: 32px;
-  background-color:${(props) => theme[props.theme].mainColor};
+  background-color: ${(props) => theme[props.theme].mainColor};
   color: ${(props) => theme[props.theme].color};
   border-radius: 5%;
   border: none;
@@ -83,4 +83,25 @@ export const NextBtn = styled.button`
   :hover {
     background-color: #acacac;
   }
+`;
+
+export const NoVideos = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: auto; 
+  margin-top: 40px;
+
+  background-color: rgb(255, 231, 236);
+`;
+
+export const NoVideosDiv = styled.div`
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  height: 100%;
+  background-color: ${(props) => theme[props.theme].color};
+
+  position: absolute;
+  width: 100%;
 `;

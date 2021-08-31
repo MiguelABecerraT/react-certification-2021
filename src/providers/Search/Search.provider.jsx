@@ -35,12 +35,12 @@ const reducer = (state, action) => {
   }
 };
 
-const SearchProvider = (props) => {
+const SearchProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, searchState);
   
     return (
       <SearchContext.Provider value={{ state, dispatch }}>
-        {props.children}
+        {children}
       </SearchContext.Provider>
     );
   };

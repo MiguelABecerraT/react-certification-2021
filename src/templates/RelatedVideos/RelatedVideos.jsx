@@ -4,15 +4,15 @@ import {
   RelatedBar,
   RelatedBarTxt,
   ScrollDiv,
-} from './RelatedVideosCard/RelatedVideos.styled';
-import VideoCardRelative from './RelatedVideosCard/RelatedVideos.details';
-import { useYoutubeApi } from '../../../../utils/hooks/useYoutubeApi';
+} from '../RelatedVideosCard/RelatedVideos.styled';
+import RelatedVideosCard from '../RelatedVideosCard/RelatedVideos.details';
+import { useYoutubeApi } from '../../utils/hooks/useYoutubeApi';
 import { useContext } from 'react';
-import { ThemeContext } from '../../../../providers/Theme/Theme.provider';
+import { ThemeContext } from '../../providers/Theme/Theme.provider';
 
-function VideosRelatives({ idVideo }) {
-  const mode = useContext(ThemeContext);
-  const { darkMode } = mode.state;
+function RelatedVideos({ idVideo, title }) {
+  const themeContext = useContext(ThemeContext);
+  const { mode } = themeContext.state;
   const [videoPlayer, setVideoPlayer] = useState(idVideo);
 
   if (videoPlayer !== idVideo) {
@@ -22,27 +22,25 @@ function VideosRelatives({ idVideo }) {
     `https://www.googleapis.com/youtube/v3/search?part=snippet&key=${process.env.REACT_APP_API_KEY}&relatedToVideoId=${videoPlayer}&type=video`
   );
 
-  console.log(dataVideos);
-
   return (
     <div className="container mx-auto">
       {isLoading ? (
         <h1>Loading...</h1>
       ) : (
-        <RelatedSection theme={darkMode}>
-          <RelatedBar className="RelatedBar" theme={darkMode}>
-            <RelatedBarTxt>Related Videos</RelatedBarTxt>
+        <RelatedSection theme={mode}>
+          <RelatedBar className="RelatedBar" theme={mode}>
+            <RelatedBarTxt>{title}</RelatedBarTxt>
           </RelatedBar>
           <ScrollDiv>
             {dataVideos.items.map((item) => (
-              <VideoCardRelative
+              <RelatedVideosCard
                 key={item.id.videoId}
                 id={item.id.videoId}
                 urlImage={item.snippet.thumbnails.medium.url}
                 title={item.snippet.title}
                 channel={item.snippet.channelTitle}
                 published={item.snippet.publishedAt}
-                theme={darkMode}
+                theme={mode}
               />
             ))}
           </ScrollDiv>
@@ -52,4 +50,4 @@ function VideosRelatives({ idVideo }) {
   );
 }
 
-export default VideosRelatives;
+export default RelatedVideos;

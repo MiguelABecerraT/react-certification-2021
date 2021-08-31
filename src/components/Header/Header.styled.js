@@ -23,11 +23,9 @@ export const HeaderDiv = styled.div`
     min-height: 64px;
   }
   @media (min-width: 600px) {
-    padding-left: 24px;
     padding-right: 24px;
   }
   min-height: 48px;
-  padding-left: 16px;
   padding-right: 16px;
   display: flex;
   position: relative;

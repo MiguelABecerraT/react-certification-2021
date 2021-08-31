@@ -1,26 +1,26 @@
 import React, { useContext } from 'react';
 import { HeaderBar, HeaderDiv, BlankDiv, DMLogin } from './Header.styled';
 
-import { MenuBtn } from './Button/Menu/MenuBtn.jsx';
-import { MySearch } from './Input/Search/SearchField';
-import { MyDarkMode } from './Button/DarkMode/DarKMode';
+import Search from './Input/Search/SearchField';
+import ThemeMode from './Button/ThemeMode/ThemeMode.jsx';
+import Profile from './Button/Profile/Profile.jsx';
 import { ThemeContext } from '../../providers/Theme/Theme.provider';
-import { Login } from './Button/Login/Login.jsx';
+import Sidebar from './Sidebar/Sidebar';
+
 
 function Header() {
-  const theme = useContext(ThemeContext);
-  const { darkMode } = theme.state;
+  const themeContext = useContext(ThemeContext);
+  const { mode } = themeContext.state;
 
   return (
-    <HeaderBar className="Header" theme={darkMode}>
+    <HeaderBar className="Header" theme={mode}>
       <HeaderDiv className="HeaderDiv">
-        <MenuBtn/>
-
-        <MySearch />
-        <BlankDiv></BlankDiv>
+        <Sidebar />
+        <Search theme={mode} />
+        <BlankDiv />
         <DMLogin>
-          <MyDarkMode theme={darkMode} />
-          <Login theme={darkMode} />
+          <ThemeMode />
+          <Profile theme={mode} />
         </DMLogin>
       </HeaderDiv>
     </HeaderBar>

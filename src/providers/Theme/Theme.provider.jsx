@@ -1,22 +1,23 @@
 import React, { createContext, useReducer } from 'react';
+import { LIGHTMODE, DARKMODE } from '../../utils/constants';
 
 export const ThemeContext = createContext();
 
 const themeState = {
-  darkMode: 'dark',
+  mode: 'Light',
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'LIGHTMODE':
+    case LIGHTMODE:
       return {
         ...state,
-        darkMode: 'light',
+        mode: 'Light',
       };
-    case 'DARKMODE':
+    case DARKMODE:
       return {
         ...state,
-        darkMode: 'dark',
+        mode: 'Dark',
       };
     default:
       return state;
@@ -25,12 +26,12 @@ const reducer = (state, action) => {
 
 
 
-const ThemeProvider = (props) => {
+const ThemeProvider = ({children}) => {
   const [state, dispatch] = useReducer(reducer, themeState);
 
   return (
     <ThemeContext.Provider value={{ state, dispatch }}>
-      {props.children}
+      {children}
     </ThemeContext.Provider>
   );
 };
