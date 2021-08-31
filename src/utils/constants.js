@@ -1,3 +1,4 @@
-const AUTH_STORAGE_KEY = 'wa_cert_authenticated';
-
-export { AUTH_STORAGE_KEY };
+export const LIGHTMODE = 'LIGHTMODE'
+export const DARKMODE = 'DARKMODE'
+export const FAVIDS = 'Favorite Videos'
+export const RELVIDS = 'Related Videos'
